@@ -120,6 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             <label for="user_type">User Type:</label>
             <select id="user_type" name="user_type" required>
                 <option value="coach">Coach</option>
+                <option value="player">Player</option>
                 <option value="scout">Scout</option>
             </select><br><br>
 
