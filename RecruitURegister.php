@@ -51,8 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dish List | Food Pantry</title>
-    <link rel="stylesheet" type="text/css" href="DishListStyle.css">
+    <title>RecruitU | Recruitment Center</title>
+    <link rel="stylesheet" type="text/css" href="LoginStyle.css">
 
     <style>
         h2 {
@@ -66,36 +66,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 <body>
     <header>
         <img src="DishListLogo.png" alt="Dish List Logo" class="logo" width="100">
-        <h1>Welcome to Dish List!</h1>
-        <p>Explore a wide range of delicious recipes.</p>
+        <h1>Welcome to RecruitU!</h1>
+        <p>Explore the globe for the best athletes around.</p>
     </header>
 
     <nav>
         <ul class="menu-item">
-            <li class="Main">
-                <a href="DishListMain.html">Home</a>
-            </li>
-            <li class="Recipes">
-                <a href="DishListRecipes.html">Recipes</a>
-            </li>
-            <li class="About Us">
-                <a href="DishListAboutUs.html">About Us</a>
-            </li>
-            <li class="Login">
-                <a href="DishListLogin.html">Login</a>
-            </li>
-            <li class="Register">
-                <a href="DishListRegister.html">Register</a>
-            </li>
-            <li class="CreateRecipe">
-                <a href="CreateRecipe.html">Create Recipe</a>
-            </li>
-            <li>
-                <a href="DishListCart.html">Cart</a>
-            </li>
-            <li>
-                <a href="history.html">History</a>
-            </li>
+            
         </ul>
     </nav>
 
