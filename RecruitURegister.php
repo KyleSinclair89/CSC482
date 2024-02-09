@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 </head>
 <body>
     <header>
-        <img src="RecruitULogo" alt="RecruitU Logo" class="logo" width="100">
+        <img src="RecruitULogo.png" alt="RecruitU Logo" class="logo" width="100">
         <h1>Welcome to RecruitU!</h1>
         <p>Explore the globe for the best athletes around.</p>
     </header>
