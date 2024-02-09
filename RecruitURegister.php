@@ -12,14 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $userType = trim($_POST['user_type']);
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-    if ($query = $db->prepare("SELECT * FROM users WHERE email = ?")){
+    if ($query = $db->prepare("SELECT * FROM users WHERE email = ?")){ // "?" MEANS BIND PARAMETER. THATS WHY WE INCLUDE WHAT THE BIND PARAMETER IS IN THE NEXT FEW LINES.
         $error = '';
         // bind parameters
         $query->bind_param('s', $email);
-        $query->execute();
+        $query->execute(); // OBTAINS THE EMAIL WERE REGISTERING WITH.
         // store the result to check the content that exists in the DB.
-        $query->store_result();
-        if ($query->num_rows > 0) {
+        $query->store_result(); // STORES THE RESULT OF THE WHAT THE EMAIL WERE TRYING TO REGISTER WITH.
+        if ($query->num_rows > 0) { // USES THE EMAIL IN THE QUERY TO SEE IF AN ACCOUNT WITH THAT EMAIL ALREADY EXISTS IN THE USER TABLE. IF THERE IS, THIS WILL INCREMENT TO A NUMBER GREATER THAN 0,
+                                   // MEANING AN ACCOUNT WITH THAT EMAIL ALREADY EXISTS.
             $error .= '<p class="error">Email is already registered.</p>';
         } else {
             // validate password
@@ -100,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
     <div class="container">
         <h2>Register</h2>
-        <form action="DishListRegister.php" method="post">
+        <form action="RecruitURegister.php" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
 
@@ -126,9 +127,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
             <input type="submit" class="btn btn-primary" name="submit" value="Register">
 
-            <p>Already have an account? <a href="DishListLogin.html">Sign in here</a></p>
+            <p>Already have an account? <a href="RecruitULogin.php">Sign in here</a></p>
 
-            <p><a href="DishListMain.html">Return Home</a></p>
+            <!--<p><a href="DishListMain.html">Return Home</a></p>-->
         </form>
     </div>
 </body>
