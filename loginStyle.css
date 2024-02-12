@@ -1,78 +1,94 @@
+/* loginStyle.css */
+
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 50px;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EE2737;
 }
 
 .login-container {
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-.login-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-.login-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.register-container {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    margin-right: 100px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+    box-sizing: border-box; /* Include padding and border in the total width and height */
 }
 
-.register-container h2 {
-    color: #333;
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Roboto Condensed', sans-serif; /* Sporty Font */
+    color: #e74c3c; /* Sporty Color */
 }
 
-.register-container form {
-    margin-top: 20px;
+header {
+    margin-left: 60px;
+    margin-right: 60px;
+    text-align: center;
+    padding: 40px; /* Adjust the padding here */
+    font-weight: bold;
+}
+form {
+    text-align: center;
 }
 
-.register-container label {
+label {
     display: block;
-    text-align: left;
     margin-bottom: 5px;
-    color: #333;
 }
 
-.register-container input {
-    width: 100%;
+.logo {
+            width: 250px;
+            margin: 0 auto 20px; /* Center the logo and add margin at the bottom */
+            display: block;
+        }
+
+input[type="email"],
+input[type="password"]{
+    width: 85%;
     padding: 10px;
     margin-bottom: 15px;
-    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the total width and height */
 }
 
-.register-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
+button[type="submit"] {
+    background-color: #e74c3c;
+    width: 50%;
+    color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    padding: 7px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
 }
 
-.register-container p {
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+p {
     margin-top: 15px;
-    color: #555;
+    text-align: center;
 }
 
-.register-container a {
-    color: #007BFF;
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
