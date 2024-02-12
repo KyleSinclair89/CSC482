@@ -49,36 +49,128 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <title>RecruitU | Recruitment Center</title>
     <link rel="stylesheet" type="text/css" href="LoginStyle.css">
-
     <style>
-        h2 {
-            text-align: center;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #EE2737;
         }
+
+        #loginStatus {
+    text-align: left;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 100px;
+}
+
+
+        header {
+    margin-left: 150px;
+    text-align: center;
+    padding: 40px; /* Adjust the padding here */
+    font-weight: bold;
+}
+
+.container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px; /* Adjust the margin-top here */
+    margin-right: 150px;
+    margin-bottom: 10px;
+}
+
+        h2,
         form {
             text-align: center;
         }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        select {
+            width: calc(100% - 30px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: calc(100% - 30px);
+            padding: 10px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #c0392b;
+        }
+
+        p {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            width: 250px;
+            margin: 0 auto 20px; /* Center the logo and add margin at the bottom */
+            display: block;
+        }
     </style>
 </head>
+
 <body>
+    <?php
+    // Display login status
+    if (!empty($loginStatus)) {
+        echo '<div id="loginStatus">' . $loginStatus . '</div>';
+    }
+    ?>
+
     <header>
         <img src="RecruitULogo.png" alt="RecruitU Logo" class="logo" width="100">
         <h1>Welcome to RecruitU!</h1>
         <p>Explore the globe for the best athletes around.</p>
     </header>
 
-    <nav>
-        <ul class="menu-item">
-            
-        </ul>
-    </nav>
-
     <div class="container">
         <h2>Register</h2>
         <form action="RecruitURegister.php" method="post">
+            <!-- Your registration form inputs go here -->
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
 
@@ -95,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             <label for="last_name">Last Name:</label>
             <input type="text" id="last_name" name="last_name" required><br><br>
 
-            <label for="user_type">User Type:</label>
+            <label for="user_type">Select Role (I am a):</label>
             <select id="user_type" name="user_type" required>
                 <option value="coach">Coach</option>
                 <option value="player">Player</option>
@@ -105,9 +197,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             <input type="submit" class="btn btn-primary" name="submit" value="Register">
 
             <p>Already have an account? <a href="RecruitULogin.php">Sign in here</a></p>
-
-            <!--<p><a href="DishListMain.html">Return Home</a></p>-->
         </form>
     </div>
 </body>
+
 </html>
+
