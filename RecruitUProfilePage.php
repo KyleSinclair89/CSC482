@@ -1,4 +1,18 @@
 <?php
+    require_once "config.php";
+    require_once "session.php";
+
+    $id = $_SESSION["userid"];
+
+    $query = $db->prepare("SELECT email FROM users WHERE id = $id");
+    $query-> execute();
+    $result = $query->get_result();
+    $row = $result->fetch_assoc();
+
+    $query->close();
+?>
+
+<?php
 // Assuming the update form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_profile'])) {
     // Update the user's profile information in the database
