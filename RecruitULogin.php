@@ -1,3 +1,66 @@
+<?php
+
+require_once "config.php";
+require_once "session.php";
+
+$error = '';
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+	$email = trim($_POST['email']);
+	$password = trim($_POST['password']);
+
+	// check to see if the email field is empty
+	if (empty($email) )
+	{
+		$error .= '<p class ="error">Please enter your email. </p>';
+	}
+	
+	// check to see if password is empty.
+	if (empty($password) )
+	{
+		$error .= '<p class = "error">Please enter your password. </p>';
+	}
+	
+	if(empty($error) )
+	{
+		if($query = $db->prepare("SELECT * FROM users WHERE email = ?") )
+		{
+			$query->bind_param('s', $email);
+			$query->execute();
+			$result = $query->get_result();
+			$row = $result->fetch_assoc();
+
+			if($row)
+			{
+				if(password_verify($password, $row['password']) )
+				{
+					$_SESSION['loggedin'] = true;
+					$_SESSION['userid'] = $row['id'];
+					$_SESSION["user"] = $row['username'];
+					
+
+					// redirect to user page.
+					header("location: RecruitUProfilePage.php");
+					exit;
+				}
+				else
+				{
+					$error .='<p class = "error"> The password is not valid. Please try again!</p>';
+				}
+			}
+			else
+			{
+				$error .= '<p class = "error">No User with that email exists. Make sure the email is correct!</p>';
+			}
+		}
+		$query->close();
+	}
+	// close connection to the database.
+	mysqli_close($db);
+}
+?>	
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
