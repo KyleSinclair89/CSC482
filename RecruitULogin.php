@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 <body>
     <div class="login-container">
         <h2>Login to RecruitU</h2>
-        <form action="login_process.php" method="post">
+        <form action="RecruitUProfilePage.php" method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
