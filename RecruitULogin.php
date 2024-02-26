@@ -4,7 +4,7 @@ require_once "config.php";
 require_once "session.php";
 
 $error = '';
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) { // Meeting with Jake: Comment out this line?
+//if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) { // Meeting with Jake: Comment out this line?
 	$email = trim($_POST['email']);
 	$password = trim($_POST['password']);
 
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) { // Meetin
 	}
 	// close connection to the database.
 	mysqli_close($db);
-}
+//}
 ?>	
 
 
@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) { // Meetin
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 		<br>
-            <button type="submit">Login</button>
+            <input type="submit" name="submit" value="Login">
         </form>
         
         <p>Don't have an account? <a href="RecruitURegister.php">Register here</a>.</p>
