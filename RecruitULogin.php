@@ -4,7 +4,7 @@ require_once "config.php";
 require_once "session.php";
 
 $error = '';
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) { // Meeting with Jake: Comment out this line?
 	$email = trim($_POST['email']);
 	$password = trim($_POST['password']);
 
