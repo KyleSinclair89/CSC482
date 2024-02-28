@@ -4,7 +4,7 @@ require_once "session.php";
 
 $birthday = isset($_POST['birthday']) ? $_POST['birthday'] : null;
 $heightFeet = isset($_POST['heightFeet']) ? $_POST['heightFeet'] : null;
-$heightInches = isset($_POST['heightIN']) ? $_POST['heightIN'] : null;
+$heightIN = isset($_POST['heightIN']) ? $_POST['heightIN'] : null;
 $weightPounds = isset($_POST['weightPounds']) ? $_POST['weightPounds'] : null;
 
 // Assuming $id is the user's ID retrieved from the session
