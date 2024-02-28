@@ -52,16 +52,16 @@ $query->close();
 
   <form action="UpdateProfile.php" method="post">
     <label for="birthday">Birthday:</label>
-    <input type="date" id="birthday" name="birthday" value="">
+    <input type="date" id="birthday" name="birthday" value="" required>
     <br>
 
     <label for="heightFeet">Height:</label>
-    <input type="number" id="heightFeet" name="heightFeet" placeholder="Feet" min="1" max="10" value="">
-    <input type="number" id="heightIN" name="heightIN" placeholder="Inches" min="0" max="11" value="">
+    <input type="number" id="heightFeet" name="heightFeet" placeholder="Feet" min="1" max="10" value="" required>
+    <input type="number" id="heightIN" name="heightIN" placeholder="Inches" min="0" max="11" value="" required>
     <br>
 
     <label for="weightPounds">Weight:</label>
-    <input type="number" id="weightPounds" name="weightPounds" placeholder="Pounds" min="0" max="700" value="">
+    <input type="number" id="weightPounds" name="weightPounds" placeholder="Pounds" min="0" max="700" value="" required>
     <br>
 
     <br>
