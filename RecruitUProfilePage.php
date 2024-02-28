@@ -24,10 +24,30 @@ $query->close();
 </head>
 <body>
 
+  <?php
+    // Modify the greeting based on user_type
+    $greeting = "";
+    switch ($userInfo['user_type']) {
+      case 'player':
+        $greeting = "Player: ";
+        break;
+      case 'coach':
+        $greeting = "Coach: ";
+        break;
+      case 'scout':
+        $greeting = "Scout: ";
+        break;
+    }
+  ?>
+
   <h2>User Information</h2>
 
   <!-- Display user information -->
-  <p>Welcome to RecruitU, <?php echo $userInfo['first_name'] . ' ' . $userInfo['last_name']; ?>!</p>
+   <p><?php echo $greeting . $userInfo['first_name'] . ' ' . $userInfo['last_name']; ?></p>
+
+ <!-- Red box element -->
+    <div class="red-box"></div>
+
   <p>Your registered email: <?php echo $userInfo['email']; ?></p>
 
   <form action="UpdateProfile.php" method="post">
