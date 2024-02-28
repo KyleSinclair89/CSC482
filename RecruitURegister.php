@@ -154,13 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 </head>
 
 <body>
-    <?php
-    // Display login status
-    if (!empty($loginStatus)) {
-        echo '<div id="loginStatus">' . $loginStatus . '</div>';
-    }
-    ?>
-
+    
     <header>
         <img src="RecruitULogo.png" alt="RecruitU Logo" class="logo" width="100">
         <h1>Welcome to RecruitU!</h1>
