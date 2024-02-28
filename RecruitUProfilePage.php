@@ -4,7 +4,7 @@ require_once "session.php";
 
 $id = $_SESSION["userid"];
 
-$query = $db->prepare("SELECT first_name, last_name, email FROM users WHERE id = ?");
+$query = $db->prepare("SELECT user_type, first_name, last_name, email FROM users WHERE id = ?");
 $query->bind_param("i", $id);
 $query->execute();
 
