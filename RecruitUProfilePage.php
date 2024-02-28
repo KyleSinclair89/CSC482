@@ -4,7 +4,7 @@ require_once "session.php";
 
 $id = $_SESSION["userid"];
 
-$query = $db->prepare("SELECT first_name, last_name, email FROM users WHERE id = ?");
+$query = $db->prepare("SELECT user_type, first_name, last_name, email FROM users WHERE id = ?");
 $query->bind_param("i", $id);
 $query->execute();
 
@@ -24,11 +24,28 @@ $query->close();
 </head>
 <body>
 
+<?php
+    // Modify the greeting based on user_type
+    $greeting = "";
+    switch ($userInfo['user_type']) {
+      case 'player':
+        $greeting = "Player: ";
+        break;
+      case 'coach':
+        $greeting = "Coach: ";
+        break;
+      case 'scout':
+        $greeting = "Scout: ";
+        break;
+    }
+  ?>
+
   <h2>User Information</h2>
 
   <!-- Display user information -->
-  <p>Welcome to RecruitU, <?php echo $userInfo['first_name'] . ' ' . $userInfo['last_name']; ?>!</p>
+   <p><?php echo $greeting . $userInfo['first_name'] . ' ' . $userInfo['last_name']; ?></p>
   <p>Your registered email: <?php echo $userInfo['email']; ?></p>
+
 
   <label for="birthday">Birthday:</label>
   <input type="date" id="birthday" name="birthday">
@@ -60,6 +77,26 @@ $query->close();
   </table>
 
   <button onclick="addOrUpdateSchoolRow()">Add or Update School</button>
+
+  <button onclick="submitForm()">Submit</button>
+
+<h2>Sports History</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Sport</th>
+        <th>Position</th>
+        <th>Years Played</th>
+        <th>Accolades</th>
+      </tr>
+    </thead>
+    <tbody id="sportsHistory"> <!-- Use a unique identifier for the tbody -->
+      <!-- Users can dynamically add rows to this table -->
+    </tbody>
+  </table>
+
+  <button onclick="addOrUpdateSportRow()">Add or Update Sport</button> <!-- Update the function name -->
 
   <button onclick="submitForm()">Submit</button>
   <p id="errorMessage"></p>
