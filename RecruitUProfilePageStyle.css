@@ -1,4 +1,4 @@
-/* testUserPageStyle.css */
+/* RecruitUProfilePageStyle.css */
 
 body {
     background-color: #EE2737;
@@ -7,29 +7,28 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Change from center to flex-start */
 }
 
 .container {
     max-width: 800px;
     width: 90%;
     box-sizing: border-box;
+    margin: 0; /* Add margin: 0 to remove default margin */
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start; /* Change from space-between to flex-start */
     margin-bottom: 15px;
 }
 
 .row label, .row input, .row select {
-    width: calc(50% - 10px); /* Adjust the width as needed */
+    width: 100%; /* Adjust the width to 100% to take the full width */
     box-sizing: border-box;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
-/* Additional styles for your form elements can be added below */
