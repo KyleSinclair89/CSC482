@@ -196,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
             <input type="submit" class="btn btn-primary" name="submit" value="Register">
 
-            <p>Already have an account? <a href="RecruitULogin.php">Sign in here</a></p>
+            <p>Already have an account? <a href="RecruitULogin.html">Sign in here</a></p>
         </form>
     </div>
 </body>
