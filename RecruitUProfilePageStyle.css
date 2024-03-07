@@ -4,29 +4,29 @@ body {
     background-color: #EE2737;
     font-family: Arial, sans-serif;
     margin: 0;
-    margin-left: 15px;
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Change from center to flex-start */
+    align-items: flex-start;
 }
+
 
 .container {
     max-width: 800px;
     width: 90%;
     box-sizing: border-box;
-    margin: 0; /* Add margin: 0 to remove default margin */
+    margin: 0;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Change from space-between to flex-start */
+    justify-content: flex-start;
     margin-bottom: 15px;
 }
 
 .row label, .row input, .row select {
-    width: 100%; /* Adjust the width to 100% to take the full width */
+    width: 100%;
     box-sizing: border-box;
     padding: 10px;
     margin-bottom: 10px;
@@ -37,21 +37,21 @@ body {
 /* Additional styles for your animation */
 @keyframes redBoxAnimation {
     0% {
-        left: 0;
+        right: 0;
     }
     100% {
-        left: calc(100% - 10px); /* Adjust the position as needed */
+        right: calc(100% - 10px);
     }
 }
 
 .red-box {
     position: absolute;
-    top: 50px; /* Adjust the top position as needed */
+    top: 200px;
     left: 0;
-    width: 10px; /* Adjust the width as needed */
-    height: 5px; /* Adjust the height as needed */
+    width: 10px;
+    height: 37px;
     background-color: #8B0000;
-    animation: flashAnimation 1s linear infinite; /* Adjust the duration as needed */
+    animation: redBoxAnimation 1s linear infinite;
 }
 
 @keyframes flashAnimation {
