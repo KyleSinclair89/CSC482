@@ -59,6 +59,7 @@ $query->close();
 <!DOCTYPE html>
 <!-- FOR SOME REASON, NEW CSS IMPLEMENTATIONS DONT WORK WHEN WRITING THEM IN THE CSS FILE. FOR STYLING, WRITE THEM AS IN-LINE DOCUMENT -->
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,7 +110,7 @@ $query->close();
    <p style="color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;"><?php echo $greeting . $userInfo['first_name'] . ' ' . $userInfo['last_name']; ?></p>
 
  <!-- Red box element -->
-    <div class="red-box" style = "margin-top: 28px; height: 28px; width: 100%; z-index: -1;"></div>
+    <div class="red-box" style = "margin-top: -122px; height: 28px; width: 100%; z-index: -1;"></div>
 
 
   <p>Your registered email: <?php echo $userInfo['email']; ?></p>
@@ -138,7 +139,7 @@ $query->close();
   <input type="number" id="weightPounds" name="weightPounds" placeholder="Pounds" min="0" max="700">
    <br>
    <br>
-
+<button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" onclick="submitForm()">Submit</button>
 
   <h2>School History</h2>
 
@@ -156,9 +157,9 @@ $query->close();
     </tbody>
   </table>
 
-  <button onclick="addOrUpdateSchoolRow()">Add or Update School</button>
+  <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial', sans-serif;" onclick="addOrUpdateSchoolRow()">Add or Update School</button>
 
-  <button onclick="submitForm()">Submit</button>
+        <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial', sans-serif;" onclick="submitForm()">Submit</button>
 
 <h2>Sports History</h2>
 
@@ -176,9 +177,10 @@ $query->close();
     </tbody>
   </table>
 
-  <button onclick="addOrUpdateSportRow()">Add or Update Sport</button> <!-- Update the function name -->
+ <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial', sans-serif;"  onclick="addOrUpdateSportRow()">Add or Update Sport</button>
 
-  <button onclick="submitForm()">Submit</button>
+        <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial', sans-serif;" onclick="submitForm()">Submit</button>
+        
   <p id="errorMessage"></p>
 
 </form>
