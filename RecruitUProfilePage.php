@@ -104,13 +104,15 @@ $query->close();
 // var_dump($userInfo);
 ?>
 
+<img src="RecruitULogo.png" alt="RecruitU Logo" style="position: absolute; top: 35px; left: 50px; width: 200px; height: auto;">
+<br><br><br><br><br><br>
   <h2>User Information</h2>
 
   <!-- Display user information -->
    <p style="color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;"><?php echo $greeting . $userInfo['first_name'] . ' ' . $userInfo['last_name']; ?></p>
 
  <!-- Red box element -->
-    <div class="red-box" style = "margin-top: -122px; height: 28px; width: 100%; z-index: -1;"></div>
+    <div class="red-box" style = "margin-top: -12px; height: 28px; width: 100%; z-index: -1;"></div>
 
 
   <p>Your registered email: <?php echo $userInfo['email']; ?></p>
