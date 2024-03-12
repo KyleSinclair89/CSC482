@@ -1,0 +1,49 @@
+body {
+    background-color: #EE2737;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#status {
+        position: absolute;
+        top: 150px; /* Adjust top position */
+        left: 50px; /* Adjust left position */
+        width: 300px; /* Adjust width as needed */
+	transition: height 1s ease;
+    }
+
+#status:focus {
+        height: 50px; /* Increase height when focused */
+    }
+
+#uploadBtn {
+        position: absolute;
+        top: 150px; /* Adjust top position */
+        left: 380px; /* Adjust left position */
+        cursor: pointer;
+        padding: 5px 20px;
+        background-color: #aa0000;
+        color: white;
+        border: 1px solid white; /* Add black border */
+        border-radius: 4px;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+	transition: background-color 0.3s ease;
+    }
+
+#uploadBtn:hover {
+        background-color: black; /* Change background color on hover */
+    }
+
+#profilePageButton
+{
+}
+
+#signOutButton
+{
+}
+
