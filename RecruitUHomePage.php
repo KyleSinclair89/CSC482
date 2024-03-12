@@ -27,6 +27,7 @@
         <input type="text" id="status" name="status" placeholder="Write your status/caption...">
         <label for="file-upload" id="uploadBtn">Upload Picture</label>
         <input type="file" id="file-upload" name="file" style="display: none;">
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>
