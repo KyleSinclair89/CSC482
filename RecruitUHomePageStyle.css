@@ -8,6 +8,14 @@ body {
     align-items: flex-start;
 }
 
+#header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
 #status {
         position: absolute;
         top: 150px; /* Adjust top position */
@@ -17,7 +25,7 @@ body {
     }
 
 #status:focus {
-        height: 50px; /* Increase height when focused */
+       /* height: 5px;  Increase height when focused 
     }
 
 #uploadBtn {
@@ -39,11 +47,16 @@ body {
         background-color: black; /* Change background color on hover */
     }
 
-#profilePageButton
-{
-}
-
-#signOutButton
-{
-}
+#menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        #menu li {
+            display: inline;
+            margin-right: 20px;
+        }
+        #menu li:last-child {
+            margin-right: 0;
+        }
 
