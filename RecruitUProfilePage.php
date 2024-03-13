@@ -104,7 +104,10 @@ $query->close();
 // var_dump($userInfo);
 ?>
 
+<a href="RecruitUHomePage.php">
 <img src="RecruitULogo.png" alt="RecruitU Logo" style="position: absolute; top: 35px; left: 50px; width: 200px; height: auto;">
+</a>
+
 <br><br><br><br><br><br>
   <h2>User Information</h2>
 
