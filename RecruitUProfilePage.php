@@ -126,7 +126,7 @@ $query->close();
    <p style="color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;"><?php echo $greeting . $userInfo['first_name'] . ' ' . $userInfo['last_name']; ?></p>
 
  <!-- Red box element -->
-    <div class="red-box" style = "margin-top: -12px; height: 28px; width: 100%; z-index: -1;"></div>
+    <div class="red-box" style = "margin-top: -22px; height: 28px; width: 100%; z-index: -1;"></div>
 
 
   <p>Your registered email: <?php echo $userInfo['email']; ?></p>
