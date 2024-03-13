@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Display the uploaded image if the URL is available
 if (isset($imageUrl)) {
     echo "<h2>Uploaded Image</h2>";
-    echo "<img src='$imageUrl' alt='Uploaded Image' style='width: 200px; height: auto; border: 10px solid white;'>";
+    echo "<img src='$imageUrl' alt='Uploaded Image' style='width: 400px; height: auto; border: 10px solid white;'>";
 }
 
 // Close database connection
