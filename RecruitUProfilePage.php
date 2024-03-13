@@ -1,3 +1,4 @@
+
 <?php
 require_once "config.php";
 require_once "session.php";
@@ -55,6 +56,83 @@ $userInfo = $result->fetch_assoc();
 
 $query->close();
 ?>
+
+
+<?php
+require_once "config.php";
+require_once "session.php";
+
+// Check if the user is logged in
+if (!isset($_SESSION["loggedin"]) || !isset($_SESSION["userid"])) {
+    // Redirect the user to the login page if not logged in
+    header("Location: login.php");
+    exit;
+}
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addSchool"])) {
+    // Retrieve user input
+    $schoolName = $_POST["schoolName"];
+    $major = $_POST["major"];
+    $gpa = $_POST["gpa"];
+    $graduationYear = $_POST["graduationYear"];
+
+    // Insert the school history into the database
+    $query = "INSERT INTO school_history (user_id, school_name, major, gpa, graduation_year) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param("isdsi", $_SESSION["userid"], $schoolName, $major, $gpa, $graduationYear);
+    $stmt->execute();
+    $stmt->close();
+}
+
+// Retrieve user's school history from the database
+$query = "SELECT school_name, major, gpa, graduation_year FROM school_history WHERE user_id = ?";
+$stmt = $db->prepare($query);
+$stmt->bind_param("i", $_SESSION["userid"]);
+$stmt->execute();
+$result = $stmt->get_result();
+$schoolHistory = $result->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
+?>
+
+<?php
+require_once "config.php";
+require_once "session.php";
+
+// Check if the user is logged in
+if (!isset($_SESSION["loggedin"]) || !isset($_SESSION["userid"])) {
+    // Redirect the user to the login page if not logged in
+    header("Location: login.php");
+    exit;
+}
+
+// Check if the form for adding sports history is submitted
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addSport"])) {
+    // Retrieve user input
+    $sport = $_POST["sport"];
+    $position = $_POST["position"];
+    $yearsPlayed = $_POST["yearsPlayed"];
+    $accolades = $_POST["accolades"];
+
+    // Insert the sports history into the database
+    $query = "INSERT INTO sports_history (user_id, sport, position, years_played, accolades) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param("isdsi", $_SESSION["userid"], $sport, $position, $yearsPlayed, $accolades);
+    $stmt->execute();
+    $stmt->close();
+}
+
+// Retrieve user's sports history from the database
+$query = "SELECT sport, position, years_played, accolades FROM sports_history WHERE user_id = ?";
+$stmt = $db->prepare($query);
+$stmt->bind_param("i", $_SESSION["userid"]);
+$stmt->execute();
+$result = $stmt->get_result();
+$sportsHistory = $result->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
+?>
+
+
 
 <!DOCTYPE html>
 <!-- FOR SOME REASON, NEW CSS IMPLEMENTATIONS DONT WORK WHEN WRITING THEM IN THE CSS FILE. FOR STYLING, WRITE THEM AS IN-LINE DOCUMENT -->
@@ -157,49 +235,88 @@ $query->close();
    <br>
 <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" onclick="submitForm()">Submit</button>
 
-  <h2>School History</h2>
+</form>
+ <h2>School History</h2>
 
-  <table>
-    <thead>
-      <tr>
-        <th>School Name</th>
-        <th>Major</th>
-        <th>GPA</th>
-        <th>Class Year</th>
-      </tr>
-    </thead>
-    <tbody id="schoolHistory">
-      <!-- Users can dynamically add rows to this table -->
-    </tbody>
-  </table>
+    <table>
+        <thead>
+            <tr>
+                <th>School Name</th>
+                <th>Major</th>
+                <th>GPA</th>
+                <th>Graduation Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($schoolHistory as $school): ?>
+            <tr>
+                <td><?php echo $school['school_name']; ?></td>
+                <td><?php echo $school['major']; ?></td>
+                <td><?php echo $school['gpa']; ?></td>
+                <td><?php echo $school['graduation_year']; ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 
-  <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial', sans-serif;" onclick="addOrUpdateSchoolRow()">Add or Update School</button>
+    <h2>Add School</h2>
 
-        <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial', sans-serif;" onclick="submitForm()">Submit</button>
+    <form method="post" action="">
+        <label for="schoolName">School Name:</label>
+        <input type="text" id="schoolName" name="schoolName" required><br><br>
+        
+        <label for="major">Major:</label>
+        <input type="text" id="major" name="major"><br><br>
+        
+        <label for="gpa">GPA:</label>
+        <input type="text" id="gpa" name="gpa" placeholder="e.g., 3.5"><br><br>
+        
+        <label for="graduationYear">Graduation Year:</label>
+        <input type="number" id="graduationYear" name="graduationYear" placeholder="YYYY"><br><br>
+        
+        <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" button type="submit" name="addSchool">Add School</button>
+    </form>
 
 <h2>Sports History</h2>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Sport</th>
-        <th>Position</th>
-        <th>Years Played</th>
-        <th>Accolades</th>
-      </tr>
-    </thead>
-    <tbody id="sportsHistory"> <!-- Use a unique identifier for the tbody -->
-      <!-- Users can dynamically add rows to this table -->
-    </tbody>
-  </table>
+    <table>
+        <thead>
+            <tr>
+                <th>Sport</th>
+                <th>Position</th>
+                <th>Years Played</th>
+                <th>Accolades</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($sportsHistory as $sport): ?>
+            <tr>
+                <td><?php echo $sport['sport']; ?></td>
+                <td><?php echo $sport['position']; ?></td>
+                <td><?php echo $sport['years_played']; ?></td>
+                <td><?php echo $sport['accolades']; ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 
- <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial', sans-serif;"  onclick="addOrUpdateSportRow()">Add or Update Sport</button>
+    <h2>Add Sport</h2>
 
-        <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial', sans-serif;" onclick="submitForm()">Submit</button>
+    <form method="post" action="">
+        <label for="sport">Sport:</label>
+        <input type="text" id="sport" name="sport" required><br><br>
         
-  <p id="errorMessage"></p>
-
-</form>
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position"><br><br>
+        
+        <label for="yearsPlayed">Years Played:</label>
+        <input type="number" id="yearsPlayed" name="yearsPlayed" min="0" required><br><br>
+        
+        <label for="accolades">Accolades:</label>
+        <textarea id="accolades" name="accolades"></textarea><br><br>
+        
+        <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" button type="submit" name="addSport">Add Sport</button>
+    </form>
 
   <script>
     // ... (rest of your JavaScript code)
