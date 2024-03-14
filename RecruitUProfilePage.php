@@ -147,7 +147,7 @@ $stmt->close();
 
 
 
-<body>
+<body style = "margin-left: 30px;">
 
 
 
@@ -201,118 +201,126 @@ $query->close();
   <h2>User Information</h2>
 
   <!-- Display user information -->
+<br>
    <p style="color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;"><?php echo $greeting . $userInfo['first_name'] . ' ' . $userInfo['last_name']; ?></p>
 
  <!-- Red box element -->
     <div class="red-box" style = "margin-top: -22px; height: 28px; width: 100%; z-index: -1;"></div>
 
 
-  <p>Your registered email: <?php echo $userInfo['email']; ?></p>
+  <p style = "font-weight: bold;">Your registered email: <?php echo $userInfo['email']; ?></p>
 
 
 <br>
 
 <form id="userForm" action="RecruitUProfilePage.php" method="post">
 <?php if (isset($userInfo['birthday'])): ?>
-  <p><strong>Birthday:</strong> <?php echo $userInfo['birthday']; ?></p>
+  <p style = "color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;"><strong>Birthday:</strong> <?php echo $userInfo['birthday']; ?></p>
 <?php endif; ?>
-  <label for="birthday">Re-Enter Birthday:</label>
+  <label for="birthday" style = "font-weight: bold;">Re-Enter Birthday:</label>
   <input type="date" id="birthday" name="birthday">
  <br><br>
 <?php if (isset($userInfo['heightFeet'])): ?>
-  <p><strong>Height:</strong> <?php echo $userInfo['heightFeet'] . ' feet ' . $userInfo['heightIN'] . ' inches'; ?></p>
+  <p style = "color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;"><strong>Height:</strong> <?php echo $userInfo['heightFeet'] . ' feet ' . $userInfo['heightIN'] . ' inches'; ?></p>
 <?php endif; ?>
-  <label for="heightFeet">Re-Enter Height:</label>
+  <label for="heightFeet" style = "font-weight: bold;">Re-Enter Height:</label>
   <input type="number" id="heightFeet" name="heightFeet" placeholder="Feet" min="1" max="10">
   <input type="number" id="heightInches" name="heightInches" placeholder="Inches" min="0" max="11">
   <br><br>
 <?php if (isset($userInfo['weight'])): ?>
-  <p><strong>Weight:</strong> <?php echo $userInfo['weight'] . ' pounds'; ?></p>
+  <p style = "color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;"><strong>Weight:</strong> <?php echo $userInfo['weight'] . ' pounds'; ?></p>
 <?php endif; ?>
-  <label for="weightPounds">Re-Enter Weight:</label>
+  <label for="weightPounds" style = "font-weight: bold;">Re-Enter Weight:</label>
   <input type="number" id="weightPounds" name="weightPounds" placeholder="Pounds" min="0" max="700">
    <br>
    <br>
 <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" onclick="submitForm()">Submit</button>
 
 </form>
- <h2>School History</h2>
+<br><br>
+<div style="margin-left: -30px; background-color: #af0a06; padding: 10px; border-radius: 10px; width: 101%; border: 2px solid black;">
 
-    <table>
+ <h2 style="margin-left: 420px; font-size: 48px; color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000; margin-bottom: 35px;">School History</h2>
+
+    <table style="margin-left: 395px; background-color: white; border-collapse: collapse; width: 30%; color: white; border-radius: 10px;">
         <thead>
             <tr>
-                <th>School Name</th>
-                <th>Major</th>
-                <th>GPA</th>
-                <th>Graduation Year</th>
-            </tr>
+    		<th style="border: 2px solid #af0a06; padding: 8px; border-radius: 10px; color: black;">School Name</th>
+    		<th style="border: 2px solid #af0a06; padding: 8px; border-radius: 10px; color: black;">Major</th>
+    		<th style="border: 2px solid #af0a06; padding: 8px; border-radius: 10px; color: black;">GPA</th>
+   		 <th style="border: 2px solid #af0a06; padding: 8px; border-radius: 10px; color: black;">Graduation Year</th>
+	      </tr>
+
         </thead>
         <tbody>
             <?php foreach ($schoolHistory as $school): ?>
             <tr>
-                <td><?php echo $school['school_name']; ?></td>
-                <td><?php echo $school['major']; ?></td>
-                <td><?php echo $school['gpa']; ?></td>
-                <td><?php echo $school['graduation_year']; ?></td>
+                <td style = "border: 2px solid #af0a06; padding: 8px; font-weight: bold; border-radius: 10px;  color: black;"><?php echo $school['school_name']; ?></td>
+                <td style = "border: 2px solid #af0a06; padding: 8px; font-weight: bold; border-radius: 10px;  color: black;"><?php echo $school['major']; ?></td>
+                <td style = "border: 2px solid #af0a06; padding: 8px; font-weight: bold; border-radius: 10px; color: black;"><?php echo $school['gpa']; ?></td>
+                <td style = "border: 2px solid #af0a06; padding: 8px; font-weight: bold; border-radius: 10px; color: black;"><?php echo $school['graduation_year']; ?></td>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
+</div>
 
     <h2>Add School</h2>
 
     <form method="post" action="">
-        <label for="schoolName">School Name:</label>
+        <label for="schoolName" style = "font-weight: bold;">School Name:</label>
         <input type="text" id="schoolName" name="schoolName" required><br><br>
         
-        <label for="major">Major:</label>
+        <label for="major" style = "font-weight: bold;">Major:</label>
         <input type="text" id="major" name="major"><br><br>
         
-        <label for="gpa">GPA:</label>
+        <label for="gpa" style = "font-weight: bold;">GPA:</label>
         <input type="text" id="gpa" name="gpa" placeholder="e.g., 3.5"><br><br>
         
-        <label for="graduationYear">Graduation Year:</label>
+        <label for="graduationYear" style = "font-weight: bold;">Graduation Year:</label>
         <input type="number" id="graduationYear" name="graduationYear" placeholder="YYYY"><br><br>
         
         <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" button type="submit" name="addSchool">Add School</button>
     </form>
+<br><br>
+<div style="margin-left: -30px; background-color: #af0a06; padding: 10px; border-radius: 10px; width: 101%; border: 2px solid black;">
 
-<h2>Sports History</h2>
+ <h2 style="margin-left: 420px; font-size: 48px; color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000; margin-bottom: 35px;">Sports History</h2>
 
-    <table>
+    <table style="margin-left: 395px; background-color: white; border-collapse: collapse; width: 30%; color: white; border-radius: 10px;">
         <thead>
             <tr>
-                <th>Sport</th>
-                <th>Position</th>
-                <th>Years Played</th>
-                <th>Accolades</th>
+                <th style="border: 2px solid #af0a06; padding: 8px; border-radius: 10px; color: black;">Sport</th>
+                <th style="border: 2px solid #af0a06; padding: 8px; border-radius: 10px; color: black;">Position</th>
+                <th style="border: 2px solid #af0a06; padding: 8px; border-radius: 10px; color: black;">Years Played</th>
+                <th style="border: 2px solid #af0a06; padding: 8px; border-radius: 10px; color: black;">Accolades</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($sportsHistory as $sport): ?>
             <tr>
-                <td><?php echo $sport['sport']; ?></td>
-                <td><?php echo $sport['position']; ?></td>
-                <td><?php echo $sport['years_played']; ?></td>
-                <td><?php echo $sport['accolades']; ?></td>
+                <td style="border: 2px solid #af0a06; padding: 8px; font-weight: bold; border-radius: 10px;  color: black;"><?php echo $sport['sport']; ?></td>
+                 <td style="border: 2px solid #af0a06; padding: 8px; font-weight: bold; border-radius: 10px;  color: black;"><?php echo $sport['position']; ?></td>
+                <td style="border: 2px solid #af0a06; padding: 8px; font-weight: bold; border-radius: 10px; color: black;"><?php echo $sport['years_played']; ?></td>
+                 <td style="border: 2px solid #af0a06; padding: 8px; font-weight: bold; border-radius: 10px; color: black;"><?php echo $sport['accolades']; ?></td>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-
+</div>
     <h2>Add Sport</h2>
 
     <form method="post" action="">
-        <label for="sport">Sport:</label>
+        <label for="sport" style = "font-weight: bold;">Sport:</label>
         <input type="text" id="sport" name="sport" required><br><br>
         
-        <label for="position">Position:</label>
+        <label for="position" style = "font-weight: bold;">Position:</label>
         <input type="text" id="position" name="position"><br><br>
         
-        <label for="yearsPlayed">Years Played:</label>
+        <label for="yearsPlayed" style = "font-weight: bold;">Years Played:</label>
         <input type="number" id="yearsPlayed" name="yearsPlayed" min="0" required><br><br>
         
-        <label for="accolades">Accolades:</label>
+        <label for="accolades" style = "font-weight: bold;">Accolades:</label>
         <textarea id="accolades" name="accolades"></textarea><br><br>
         
         <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" button type="submit" name="addSport">Add Sport</button>
