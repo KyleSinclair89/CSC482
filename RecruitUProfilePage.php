@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addSchool"])) {
     // Insert the school history into the database
     $query = "INSERT INTO school_history (user_id, school_name, major, gpa, graduation_year) VALUES (?, ?, ?, ?, ?)";
     $stmt = $db->prepare($query);
-    $stmt->bind_param("isdsi", $_SESSION["userid"], $schoolName, $major, $gpa, $graduationYear);
+    $stmt->bind_param("isssi", $_SESSION["userid"], $schoolName, $major, $gpa, $graduationYear);
     $stmt->execute();
     $stmt->close();
 }
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addSport"])) {
     // Insert the sports history into the database
     $query = "INSERT INTO sports_history (user_id, sport, position, years_played, accolades) VALUES (?, ?, ?, ?, ?)";
     $stmt = $db->prepare($query);
-    $stmt->bind_param("isdsi", $_SESSION["userid"], $sport, $position, $yearsPlayed, $accolades);
+    $stmt->bind_param("issss", $_SESSION["userid"], $sport, $position, $yearsPlayed, $accolades);
     $stmt->execute();
     $stmt->close();
 }
