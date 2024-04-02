@@ -17,13 +17,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   // Send the email
   if(mail($to,$subject,$body,$headers)){
     echo "Email sent successfully! Returning home..."
-    header("location: RecruitUHomePage.html");
-					exit;
+    //header("location: RecruitUHomePage.html");
+	//				exit;
   }
   else{
     echo "Failed to send email! Please try again."
-      header("location: RecruitUContactUs.html");
-					exit;
+      //header("location: RecruitUContactUs.html");
+	//				exit;
   }
 }
 ?>
