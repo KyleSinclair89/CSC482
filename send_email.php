@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   // Send the email
   if(mail($to,$subject,$body,$headers)){
     echo "Email sent successfully! Returning home..."
-    header("location: RecruitUHomePage.php");
+    header("location: RecruitUHomePage.html");
 					exit;
   }
   else{
