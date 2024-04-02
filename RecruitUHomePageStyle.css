@@ -17,31 +17,31 @@ body {
         }
 
 #status {
-        position: absolute;
-        top: 150px; /* Adjust top position */
-        left: 50px; /* Adjust left position */
-        width: 300px; /* Adjust width as needed */
-	transition: height 1s ease;
-    }
+    position: relative;
+    top: 150px;
+    left: 50px;
+    width: 300px;
+    transition: height 1s ease;
+}
 
 #status:focus {
-       /* height: 5px;  Increase height when focused 
+        height: 5px;  Increase height when focused 
     }
 
 #uploadBtn {
-        position: absolute;
-        top: 150px; /* Adjust top position */
-        left: 380px; /* Adjust left position */
-        cursor: pointer;
-        padding: 5px 20px;
-        background-color: #aa0000;
-        color: white;
-        border: 1px solid white; /* Add black border */
-        border-radius: 4px;
-        font-weight: bold;
-        font-family: 'Arial', sans-serif;
-	transition: background-color 0.3s ease;
-    }
+    position: absolute;
+    top: 150px;
+    left: 380px; /* Adjusted left position to move it to the right of the status bar */
+    cursor: pointer;
+    padding: 5px 20px;
+    background-color: #aa0000;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease;
+}
 
 #uploadBtn:hover {
         background-color: black; /* Change background color on hover */
