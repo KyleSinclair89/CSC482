@@ -54,7 +54,10 @@ section {
 }
 
 h2 {
-  color: #e74c3c; 
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 2em; 
 }
 
 p {
