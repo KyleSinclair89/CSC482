@@ -7,56 +7,70 @@
     <title>About Us - Company Name</title>
     <link rel="stylesheet" type="text/css" href="RecruitUHomePageStyle.css">
     <style>
-        /* CSS for centering and adding outline */
-        header h1 {
-            border: none; /* Remove the border around header */
-        }
-        
-        p {
-            font-size: 1.1em; /* Make paragraphs slightly larger */
-        }
-
-body {
+        body {
+    background-color: #EE2737; /* Match the background color from the provided code */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center; /* Center align all content */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f0f0f0; /* Match the background color from the provided code */
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+#status {
+    position: relative;
+    top: 150px;
+    left: 50px;
+    width: 300px;
+    transition: height 1s ease;
 }
 
-section {
-    margin-bottom: 20px;
-    border: 1px solid #fff; /* Thin white outline */
-    padding: 20px;
-    text-align: left; /* Left align text within sections */
+#status:focus {
+    height: 5px; /* Increase height when focused */
 }
 
-h2 {
-    color: #333;
+#uploadBtn {
+    position: absolute;
+    top: 150px;
+    left: 380px; /* Adjusted left position to move it to the right of the status bar */
+    cursor: pointer;
+    padding: 5px 20px;
+    background-color: #aa0000; /* Match the background color from the provided code */
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease;
 }
 
-.creator {
-    margin-bottom: 20px;
+#uploadBtn:hover {
+    background-color: black; /* Change background color on hover */
 }
 
-/* Responsive styles */
-@media (max-width: 600px) {
-    .container {
-        padding: 0 10px;
-    }
+#menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
+
+#menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#menu li:last-child {
+    margin-right: 0;
+}
+
 
     </style>
 </head>
