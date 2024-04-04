@@ -38,3 +38,11 @@ CREATE TABLE users (
               PRIMARY KEY(id),
               UNIQUE KEY email(email)
           );
+
+
+CREATE TABLE posts (
+    post_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT UNSIGNED,
+    caption varchar(255),
+    imageURL varchar(255),
+    FOREIGN KEY (user_id) REFERENCES users(id));
