@@ -68,7 +68,7 @@ $query->close();
 <link rel="stylesheet" type="text/css" href="RecruitUProfilePageStyle.css">
 </head>
 
-<body>
+<body style = "margin-left: 30px;">
 
 <?php
 // Modify the greeting based on user_type
