@@ -3,6 +3,7 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
+  background-color: #EE2737; 
 }
 
 nav {
@@ -28,8 +29,8 @@ nav {
   padding: 10px 20px;
   text-decoration: none;
   color: #fff;
-  border-radius: 50px; /* make it circular */
-  background-color: #FF5733; /* orange background color */
+  border-radius: 50px; 
+  background-color: #e74c3c; 
 }
 
 .container {
@@ -39,22 +40,27 @@ nav {
 }
 
 header {
-  background-color: #4CAF50; /* green background color */
-  color: #fff;
+  background-color: #fff; 
+  color: #e74c3c; 
   padding: 20px;
   text-align: center;
 }
 
 section {
   margin-bottom: 20px;
-  border: 1px solid #fff; /* Thin white outline */
+  border: 1px solid #ccc; 
   padding: 20px;
-  text-align: left; /* Left align text within sections */
+  text-align: left; 
 }
 
 h2 {
-  color: #333;
+  color: #e74c3c; 
 }
+
+p {
+  font-size: 1.2em; 
+}
+
 
 .creator {
   margin-bottom: 20px;
