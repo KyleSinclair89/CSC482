@@ -1,5 +1,10 @@
 <?php
-// Assuming you have already established the database connection
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'accounts';
+
+$conn = new mysqli($host, $username, $password, $database);
 
 // Retrieve the search query
 $searchQuery = $_GET['query'];
