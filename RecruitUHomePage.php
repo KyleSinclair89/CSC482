@@ -164,11 +164,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 </form>
 
+<form id="searchForm" action="searchresults.php" method="GET" style="display: inline-block;">
+    <input type="text" id="lastName" name="lastName" placeholder="Last Name" style="margin-left: 10px;">
+    <button type="submit" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; margin-left: 10px;">Search</button>
+</form>
 
-<form id="searchForm" action="SearchResults.php" method="GET" style="display: inline-block;">
-        <input type="text" id="searchQuery" name="query" placeholder="Search by name..." style="margin-left: 10px;">
-        <button type="submit" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; margin-left: 10px;">Search</button>
-    </form
+
+
 
 </div>
 <br>
