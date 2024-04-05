@@ -1,10 +1,7 @@
 <?php
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'accounts';
-
-$conn = new mysqli($host, $username, $password, $database);
+// Include the database connection file
+require_once "config.php";
+require_once "session.php";
 
 // Retrieve the search query
 $searchQuery = $_GET['query'];
