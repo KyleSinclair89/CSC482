@@ -153,14 +153,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </li>
 </ul>
 <br><br><br><br><br><br><br><br><br><br><br>
+
+<div>
 <form id="uploadForm" action="RecruitUHomePage.php" method="post" enctype="multipart/form-data" style="position: relative;">
     <input type="text" id="status" name="status" placeholder="Write your status/caption..." style="margin-left: 10px; position: absolute; top: 0; left: 0;">
-    <label for="file-upload" id="uploadBtn" style="background-color: #af0a06; color: white; padding: 10px 50px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; top: 0; right: 0; z-index: 1; margin-left: 370px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white'; position: relative;">Upload Picture</label>
-
+    <label for="file-upload" id="uploadBtn" style="background-color: #af0a06; color: white; padding: 10px 50px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; top: 0; left: 335px; z-index: 1; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white'; position: relative;">Upload Picture</label>
 
     <input type="file" id="file-upload" name="file" style="display: none;">
-<input type="submit" id="submitButton" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; top: 0; right: 0; z-index: 1; margin-top: 50px; cursor: pointer;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';"></label>
+    <input type="submit" id="submitButton" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; top: 0; left: 300px; z-index: 1; margin-top: 50px; cursor: pointer;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';">
+
 </form>
+
+
+<form id="searchForm" action="SearchResults.php" method="GET" style="display: inline-block;">
+        <input type="text" id="searchQuery" name="query" placeholder="Search by name..." style="margin-left: 10px;">
+        <button type="submit" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; margin-left: 10px;">Search</button>
+    </form
+
+</div>
 <br>
 <?php
     // Call the function to display all posts
@@ -170,6 +180,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 </body>
 </html>
-
-
-
