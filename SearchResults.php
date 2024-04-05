@@ -6,7 +6,7 @@ require_once "config.php";
 $lastName = $_GET['lastName'];
 
 // Query the database for matching users based on last name
-$query = "SELECT id, first_name, last_name FROM users WHERE last_name LIKE ?";
+$query = "SELECT id, first_name, last_name, user_type FROM users WHERE last_name LIKE ?";
 $stmt = $db->prepare($query);
 
 // Check if the prepare() call failed
@@ -40,7 +40,8 @@ $stmt->close();
         // Loop through the result set and display user information
         while ($row = $result->fetch_assoc()) {
             // Display search results as clickable links to user pages
-            echo "<li><a href='RecruitUUserPage.php?userid={$row['id']}'>{$row['first_name']} {$row['last_name']}</a></li>";
+            echo "<li><a href='RecruitUUserPage.php?userid={$row['id']}'>{$row['first_name']} {$row['last_name']} - {$row['user_type']}</a></li>";
+        
         }
         ?>
     </ul>
