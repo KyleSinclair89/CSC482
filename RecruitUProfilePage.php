@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $query .= " weight = '$weight',";
         }
 
-        // Remove the trailing comma and complete the query
+        // Omit the trailing comma
         $query = rtrim($query, ',') . " WHERE id = ?";
 
         // Prepare and execute the query
@@ -185,7 +185,7 @@ $query->close();
 <a href="RecruitUHomePage.php">
 <img src="RecruitULogo.png" alt="RecruitU Logo" style="position: absolute; top: 35px; left: 50px; width: 200px; height: auto;">
 </a>
-<ul style="position: absolute; left: 1000px; top: 100px; list-style-type: none; margin: 0; padding: 0;">
+<ul style="position: relative; left: 1100px; top: 100px; list-style-type: none; margin: 0; padding: 0;">
     <li style="display: inline; font-weight: bold; margin-right: 20px;">
         <a href="RecruitUHomePage.php" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';">Home</a>
     </li>
@@ -193,15 +193,12 @@ $query->close();
         <a href="RecruitUProfilePage.php" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';">Profile</a>
     </li>
     <li style="display: inline; font-weight: bold; margin-right: 20px;">
-        <a href="RecruitUAboutUs.html" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';">About Us</a>
-    </li>
-    <li style="display: inline; font-weight: bold; margin-right: 20px;">
         <a href="SignOut.php" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';">Sign Out</a>
     </li>
 </ul>
 
 <br><br><br><br><br><br><br>
-  <h2>User Information</h2>
+  <h2 style = "margin-top: 33px;">User Information</h2>
 
   <!-- Display user information -->
 <br>
@@ -241,11 +238,11 @@ $query->close();
 
 </form>
 <br><br>
-<div style="margin-left: -30px; background-color: #af0a06; padding: 10px; border-radius: 10px; width: 101%; border: 2px solid black;">
+<div style="margin-left: -10px; background-color: #af0a06; padding-bottom: 20px; border-radius: 10px; padding-right: 20px; border: 2px solid black;">
 
- <h2 style="margin-left: 420px; font-size: 48px; color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000; margin-bottom: 35px;">School History</h2>
+ <h2 style="margin-left: 150px; font-size: 48px; color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000; margin-bottom: 35px;">School History</h2>
 
-    <table style="margin-left: 395px; background-color: white; border-collapse: collapse; width: 30%; color: white; border-radius: 10px;">
+    <table style="margin-left: 25px; background-color: white; border-collapse: collapse; color: white; border-radius: 10px;">
         <thead>
             <tr>
     		<th style="border: 2px solid #af0a06; padding: 8px; border-radius: 10px; color: black;">School Name</th>
@@ -286,11 +283,11 @@ $query->close();
         <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" button type="submit" name="addSchool">Add School</button>
     </form>
 <br><br>
-<div style="margin-left: -30px; background-color: #af0a06; padding: 10px; border-radius: 10px; width: 101%; border: 2px solid black;">
+<div style="margin-left: -10px; background-color: #af0a06; padding-bottom: 20px; border-radius: 10px; padding-right: 20px; border: 2px solid black;">
 
- <h2 style="margin-left: 420px; font-size: 48px; color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000; margin-bottom: 35px;">Sports History</h2>
+ <h2 style="margin-left: 150px; font-size: 48px; color: white; font-weight: bold; text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000; margin-bottom: 35px;">Sports History</h2>
 
-    <table style="margin-left: 395px; background-color: white; border-collapse: collapse; width: 30%; color: white; border-radius: 10px;">
+    <table style="margin-left: 25px; background-color: white; border-collapse: collapse; color: white; border-radius: 10px;">
         <thead>
             <tr>
                 <th style="border: 2px solid #af0a06; padding: 8px; border-radius: 10px; color: black;">Sport</th>
@@ -332,6 +329,6 @@ $query->close();
   <script>
     // ... (rest of your JavaScript code)
   </script>
-
+<br>
 </body>
 </html>
