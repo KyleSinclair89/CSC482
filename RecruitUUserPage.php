@@ -100,7 +100,7 @@ require_once "config.php";
 require_once "session.php";
 
 // Check if the user is logged in
-if (!isset($_SESSION["loggedin"]) || !isset($id)) {
+if (!isset($_SESSION["loggedin"]) || !isset($_SESSION["userid"])) {
     // Redirect the user to the login page if not logged in
     header("Location: login.php");
     exit;
