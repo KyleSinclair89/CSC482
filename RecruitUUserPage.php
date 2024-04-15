@@ -1,9 +1,9 @@
 
 <?php
 require_once "config.php";
-require_once "session.php";
 
-$id = $_SESSION["userid"];
+// get id from url parameter
+$id = $_GET["userid"];
 
 // Additional code for handling form submissions
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
