@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addSchool"])) {
     // Insert the school history into the database
     $query = "INSERT INTO school_history (user_id, school_name, major, gpa, graduation_year) VALUES (?, ?, ?, ?, ?)";
     $stmt = $db->prepare($query);
-    $stmt->bind_param("isssi", $_SESSION["userid"], $schoolName, $major, $gpa, $graduationYear);
+    $stmt->bind_param("isssi", $id, $schoolName, $major, $gpa, $graduationYear);
     $stmt->execute();
     $stmt->close();
 }
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addSchool"])) {
 // Retrieve user's school history from the database
 $query = "SELECT school_name, major, gpa, graduation_year FROM school_history WHERE user_id = ?";
 $stmt = $db->prepare($query);
-$stmt->bind_param("i", $_SESSION["userid"]);
+$stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
 $schoolHistory = $result->fetch_all(MYSQLI_ASSOC);
@@ -100,7 +100,7 @@ require_once "config.php";
 require_once "session.php";
 
 // Check if the user is logged in
-if (!isset($_SESSION["loggedin"]) || !isset($_SESSION["userid"])) {
+if (!isset($_SESSION["loggedin"]) || !isset($id)) {
     // Redirect the user to the login page if not logged in
     header("Location: login.php");
     exit;
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addSport"])) {
     // Insert the sports history into the database
     $query = "INSERT INTO sports_history (user_id, sport, position, years_played, accolades) VALUES (?, ?, ?, ?, ?)";
     $stmt = $db->prepare($query);
-    $stmt->bind_param("issss", $_SESSION["userid"], $sport, $position, $yearsPlayed, $accolades);
+    $stmt->bind_param("issss", $id, $sport, $position, $yearsPlayed, $accolades);
     $stmt->execute();
     $stmt->close();
 }
@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addSport"])) {
 // Retrieve user's sports history from the database
 $query = "SELECT sport, position, years_played, accolades FROM sports_history WHERE user_id = ?";
 $stmt = $db->prepare($query);
-$stmt->bind_param("i", $_SESSION["userid"]);
+$stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
 $sportsHistory = $result->fetch_all(MYSQLI_ASSOC);
