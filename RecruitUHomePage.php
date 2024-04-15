@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
        // echo "Image uploaded and added to the database successfully.";
     //} else {
        // echo "Error uploading file.";
-   // }
+    //}
 }
 
 ?>
@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <li style="display: inline; font-weight: bold; margin-right: 20px;">
         <a href="RecruitUProfilePage.php" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';">Profile</a>
     </li>
-    <li style="display: inline; font-weight: bold; margin-right: 20px;">
+<li style="display: inline; font-weight: bold; margin-right: 20px;">
         <a href="RecruitUAboutUs.html" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';">About Us</a>
     </li>
     <li style="display: inline; font-weight: bold; margin-right: 20px;">
@@ -160,16 +160,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <input type="file" id="file-upload" name="file" style="display: none;">
 <input type="submit" id="submitButton" style="font-weight: bold; background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; top: 0; right: 0; z-index: 1; margin-top: 50px; cursor: pointer;" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';"></label>
 </form>
-
-
 <br>
 <br>
 
 <form id="searchForm" action="searchresults.php" method="GET" style="display: inline-block;"> 
-	<input type="text" id="lastName" name="lastName" placeholder="Last Name" style="margin-left: 10px;"> 
-	<button type="submit" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; margin-left: 10px;">Search</button> 
+	<input type="text" id="lastName" name="lastName" placeholder="Search by Last Name" style="margin-left: calc(50% - 115px); position: absolute; top: 0; margin-top: 20px;">
+    <button type="submit" style="background-color: #af0a06; color: white; padding: 10px; text-decoration: none; border-radius: 5px; border: 2.5px solid black; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: box-shadow 0.3s, background-color 0.3s, color 0.3s; margin-left: calc(50% + 75px); position: absolute; top: 0; margin-top: 10px;">Search</button> 
 </form>
-
 <br>
 <?php
     // Call the function to display all posts
