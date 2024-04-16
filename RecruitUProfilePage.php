@@ -237,7 +237,7 @@ $query->close();
   <input type="number" id="weightPounds" name="weightPounds" placeholder="Pounds" min="0" max="700">
    <br>
    <br>
-<button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" onclick="submitForm()">Submit</button>
+<button style="background-color: #af0a06; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" onclick="submitForm()" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';">Submit</button>
 
 </form>
 <br><br>
@@ -283,7 +283,7 @@ $query->close();
         <label for="graduationYear" style = "font-weight: bold;">Graduation Year:</label>
         <input type="number" id="graduationYear" name="graduationYear" placeholder="YYYY"><br><br>
         
-        <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" button type="submit" name="addSchool">Add School</button>
+        <button style="background-color: #af0a06; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" button type="submit" name="addSchool" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';">Add School</button>
     </form>
 <br><br>
 <div style="margin-left: -10px; background-color: #af0a06; padding-bottom: 20px; border-radius: 10px; padding-right: 20px; border: 2px solid black;">
@@ -326,7 +326,7 @@ $query->close();
         <label for="accolades" style = "font-weight: bold;">Accolades:</label>
         <textarea id="accolades" name="accolades"></textarea><br><br>
         
-        <button style="background-color: #e74c3c; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" button type="submit" name="addSport">Add Sport</button>
+        <button style="background-color: #af0a06; color: white; border-radius: 8px; padding: 5px 20px; font-weight: bold; font-family: 'Arial Bold', sans-serif;" button type="submit" name="addSport" onmouseover="this.style.backgroundColor='#000'; this.style.color='#EE2737';" onmouseout="this.style.backgroundColor='#af0a06'; this.style.color='white';">Add Sport</button>
     </form>
 
   <script>
