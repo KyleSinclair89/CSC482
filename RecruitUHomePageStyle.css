@@ -25,13 +25,13 @@ body {
 }
 
 #status:focus {
-        height: 5px;  Increase height when focused 
+        height: 5px;  
     }
 
 #uploadBtn {
     position: absolute;
     top: 150px;
-    left: 380px; /* Adjusted left position to move it to the right of the status bar */
+    left: 380px; 
     cursor: pointer;
     padding: 5px 20px;
     background-color: #aa0000;
@@ -44,7 +44,7 @@ body {
 }
 
 #uploadBtn:hover {
-        background-color: black; /* Change background color on hover */
+        background-color: black; 
     }
 
 #menu {
