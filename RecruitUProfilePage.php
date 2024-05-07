@@ -330,7 +330,6 @@ $query->close();
     </form>
 
   <script>
-    // ... (rest of your JavaScript code)
   </script>
 <br>
 </body>
